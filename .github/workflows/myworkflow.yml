@@ -7,6 +7,24 @@ on:
     branches: [ "master" ]
 
 
+  workflow_dispatch:
+    inputs:
+      input1:
+        description: 'Enter first variable'
+        required: true
+        
+      input2:
+        description: 'Enter second variable'
+        required: true
+
+
+
+env:
+  a: ${{github.event.inputs.input1}}
+  b: ${{github.event.inputs.input2}}
+
+
+
 jobs:
   job1:
     runs-on: ubuntu-latest
